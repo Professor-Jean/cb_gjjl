@@ -1,0 +1,40 @@
+/*********************************************
+ *Autores: Gabriel Dezan, João Santucci, João Spieker, Lucas Janning;
+ *Data de criação: 26/10/2016;
+ *Data de modificação: 27/10/2016;
+ ********************************************/
+
+.header{
+	width: 100%;
+	font-size: 25px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#content{
+	text-align: center;
+}
+
+#content table{
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+}
+
+#content th{
+	background: #ccc;
+}
+
+#content table,#content th, #content tr, #content td{
+	border: 1px solid #999;
+	border-collapse: collapse;
+}
+
+.footer{
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+}
+#content table{
+	width: 95%;
+}
+

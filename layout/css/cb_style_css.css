@@ -1,0 +1,783 @@
+/*********************************************
+ *Autores: Gabriel Dezan, João Santucci, João Spieker, Lucas Janning;
+ *Data de criação: 08/08/2016;
+ *Data de modificação: 20/10/2016;
+ ********************************************/
+
+/***** Config Gerais *****/
+html, body{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+
+body{
+  background: #eaecee;
+  font-family: sans-serif;
+  font-size: 15px;
+ }
+
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 25px;
+}
+
+h3{
+  font-size: 20px;
+}
+
+h4{
+  font-size: 15px;
+}
+
+h5{
+  font-size: 10px;
+}
+
+p{
+	font-size: 15px;
+}
+
+input, select, textarea{
+  outline: none;
+  border: none;
+  width: 280px;
+  padding: 10px;
+  font-size: 17px;
+  background: #eee;
+}
+
+input:focus, textarea:focus, select:focus{
+  background: #fff;
+}
+
+button[type="submit"]{
+  outline: none;
+  width: 300px;
+  background: #02981a;
+  border: none;
+  padding: 7px;
+  color: #fff;
+  font-size: 16px;
+}
+
+button[type="reset"]{
+  outline: none;
+  width: 100px;
+  background: #cf1c1c;
+  border: none;
+  padding: 7px;
+  color: #fff;
+  font-size: 16px;
+}
+
+#valor_real_calc{
+  outline: none;
+  background: #999;
+  border: none;
+  color: #000;
+  height: 30px;
+}
+
+button:hover{
+  opacity: 0.9;
+}
+
+button:active{
+  opacity: 1;
+}
+
+footer{
+  background: url('../images/bg2.png') fixed;
+  background-size: 100%;
+  width: 100%;
+  height: 25px;
+  color: #fff;
+  text-align: center;
+  line-height: 25px;
+  position: fixed;
+  bottom: 0;
+  z-index: 900;
+}
+
+/***** Index *****/
+#index_body{
+  background: url('../images/bg2.png');
+}
+
+#index_content{
+  height: 550px;
+  min-width: 800px;
+  width: 80vw;
+  max-width: 1000px;
+}
+
+#logo{
+  position: relative;
+  float: left;
+  height: 100%;
+  width: calc(100% - 341px);
+}
+
+#logo img{
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+#content_form{
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 300px;
+}
+
+#content_form h1{
+  font-weight: 400;
+  color: #fff;
+  font-size: 40px;
+  line-height: 90px;
+}
+
+#content_form input{
+  margin: 6px 0 6px 0;
+}
+
+#content_form button[type='submit']{
+  margin-top: 10px;
+}
+
+#login_form{
+  width: 300px;
+  left: 50%;
+}
+
+.center_absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.vertical_line{
+  display: flex;
+  align-items: center;
+  position: relative;
+  float: left;
+  width: 1px;
+  height: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.vertical_line::after{
+    display: block;
+    content: "";
+    background: #fff;
+    width: 100%;
+    height: 80%;
+}
+
+#index_body footer{
+  background: none;
+  color:#fff;
+}
+
+#login_msg{
+  background: url('../images/bg2.png');
+  height: calc(100% - 100px);
+  padding: 50px;
+}
+
+/***** Backend *****/
+header{
+  background: url('../images/bg2.png') fixed;
+  background-size: 100%;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 900;
+}
+
+header #menu{
+  height: 35px;
+  padding: 8px;
+  z-index: 900;
+}
+
+header #menu:hover{
+  background: rgba(50, 50, 50, 0.5);
+}
+
+header #menu:hover + nav, nav:hover{
+  display: block;
+}
+
+header #header_logo{
+  height: 50px;
+  width: 170px;
+  margin: 0 10px 0 10px;
+}
+
+header h1{
+  flex: 1;
+}
+
+header #user_area{
+  display: flex;
+  align-items: center;
+}
+
+header #user_area a{
+  color: #fff;
+  margin: 0 5px 0 5px;
+	text-decoration: none;
+}
+
+header #user_area #quit{
+  height: 40px
+}
+
+header #header_logo:hover, header #user_area a:hover, header #user_area #quit:hover{
+  opacity: 0.9;
+}
+
+nav{
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  min-width: 700px;
+}
+
+nav ul{
+  float: left;
+  margin: 0 10px 0 10px;
+}
+
+nav ul .menu_title{
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  margin-bottom: 5px;
+  padding: 2px;
+  color: #333;
+}
+
+nav ul li{
+  margin: 10px 0 10px 0;
+}
+
+nav ul li a{
+  font-size: 17px;
+  text-decoration: none;
+  color: #000;
+}
+
+nav ul li a:hover{
+  color: #333;
+  border-bottom: 2px solid #666;
+}
+
+/***** Conteúdo *****/
+#content{
+  width: calc(100% - 10px);
+  margin-top: 50px;
+  padding: 25px 0 50px 10px;
+}
+
+/**** Fomulário de registros *****/
+#content #calendar {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2px;
+  border: 1px solid #666;
+}
+
+#content #register{
+  width: 800px;
+  min-height: 200px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin: 40px auto 0 auto;
+}
+
+#content #register h3{
+  padding: 10px 0 0 10px;
+}
+
+#content #register hr{
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+#content #register input, textarea{
+  border: 1px solid #ddd;
+  width: 180px;
+  height: 15px;
+}
+
+#content #register select{
+  border: 1px solid #ddd;
+  width: 200px;
+  padding: 0;
+  height: 37px;
+  margin: 0;
+}
+
+#content #register button[type='submit']{
+  width: 200px;
+}
+
+#content #register button[type='reset']{
+  width: 80px;
+
+}
+#content #register table{
+  margin: 20px auto 20px auto;
+}
+
+#content #register table, #content #register tr, #content #register td{
+  padding: 5px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/***** Área de Consultas *****/
+#consult{
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  text-align: center;
+  clear: both;
+  white-space: normal;
+}
+
+#consult a{
+  text-decoration: none;
+  color: #000;
+}
+
+#consult .consult_title{
+  margin: auto;
+  text-align: center;
+}
+
+#consult h2{
+  margin:auto;
+}
+
+#consult .filter_icon, #consult .filter_icon2{
+  width: 35px;
+}
+
+#consult .filter_icon:hover, #consult .filter_icon2:hover{
+  cursor: pointer;
+}
+
+#consult .consult_table{
+  max-width: 95%;
+  margin: 20px auto 0 auto;
+  font-size: 17px;
+  background: #fff;
+}
+
+#consult .consult_table tr, #consult .consult_table td, #consult .consult_table th{
+  border: 1px solid #ddd;
+  height: 30px;
+  vertical-align: middle;
+  padding: 2px;
+}
+
+#consult .consult_table th{
+  background: #999;
+  text-align: center;
+}
+
+#consult .consult_table tr{
+  text-align: left;
+}
+
+#consult .consult_table tr:hover{
+  background: #ccd7d9;
+}
+
+#consult .consult_table tr:nth-child(even){
+  background: #eee;
+}
+
+#consult .consult_table tr:nth-child(even):hover{
+  background: #ccd7d9;
+}
+
+#consult .consult_table img:hover{
+  opacity: 0.8;
+}
+
+.slider {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.slick-active{
+  color: #212121;
+}
+
+.slick-center{
+  font-size: 25px;
+  color: #212121;
+}
+
+/***** Rota de entrega *****/
+
+.selecionado td{
+  background: #aaa !important;
+  color: #666 !important;
+  border: 1px solid #bbb !important;
+}
+
+button[name=btnimprimir], button[name=btnsalvar]{
+  background: none;
+  padding: 0;
+  width: 35px;
+  float: right;
+  margin: 5px;
+}
+
+button[name=btnimprimir]:hover, button[name=btnsalvar]:hover{
+  background: none;
+}
+
+/*****Página de estatísticas *****/
+#tabs{
+  position: static;
+  width: 90%;
+  min-height: 200px;
+  margin: 20px auto 0 auto;
+}
+
+#tabs li{
+  position: static;
+}
+
+#tabs a:focus{
+  outline: none;
+}
+
+.statistics_filter table{
+  width: 200px;
+}
+
+.statistics_filter table input{
+  width: 100px;
+  height: 20px;
+  margin-left: 10px;
+  border: 1px solid #ddd;
+}
+
+.statistics_filter select{
+  margin:10px 0;
+  width: 190px;
+  height: 32px;
+  padding: 2px;
+}
+
+.statistics_filter button{
+  width: 120px;
+  height: 30px;
+  border: none;
+  margin-left: 10px;
+  padding: 2px;
+}
+
+/***** Mensagem erro/confirmação *****/
+.message{
+  width: 450px;
+  margin: 50px auto 0 auto;
+  padding-bottom: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.message h3{
+  padding-top: 5px;
+}
+
+.message hr{
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.message p{
+  white-space: normal;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.message img{
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.message a{
+  margin-top: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #666;
+  display: inline-block;
+}
+
+.message a:hover{
+  text-decoration: underline;
+}
+
+.message a img{
+  width:20px;
+}
+
+/***** Filtro *****/
+.filter, .filter2{
+  width: 600px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin: auto;
+  display: none;
+}
+
+.filter h3, .filter2 h3{
+  padding: 5px 0 0 5px;
+}
+
+.filter h3 a, .filter2 h3 a{
+  float: right;
+  padding: 5px 5px 0 0;
+  color: #666;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.filter h3 a:hover, .filter h3 a:hover{
+  color: #000;
+  cursor: pointer;
+}
+
+.filter table, .filter2 table{
+  margin: auto;
+}
+
+.filter table, .filter tr, .filter td, .filter2 table, .filter2 tr, .filter2 td{
+  padding: 7px;
+  font-size: 18px;
+}
+
+.filter input, .filter2 input, select{
+  width: 150px;
+  border: 1px solid #ddd;
+  margin: 10px 0 10px 0;
+}
+
+.filter button[type="reset"], .filter2 button[type="reset"]{
+  width: 75px;
+}
+
+.filter button[type="submit"], .filter2 button[type="submit"]{
+  width: 170px;
+}
+/***** Pesquisa *****/
+.search{
+  height: 30px;
+  margin-top: 20px;
+}
+
+.search, .search form input, .search form button[name=btnpesquisar]{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.search form input{
+  width: 180px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: calc(100% - 20px);
+  margin-right: -4px;
+  border: 1px solid #fff;
+  border-right: none;
+  background: #fff;
+  height: 19px;
+}
+
+.search form button[name=btnpesquisar]{
+  height: 100%;
+  background: #fff;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: 1px solid #fff;
+  border-left: none;
+  width: 40px;
+  padding: 0;
+}
+
+.search form button[name=btnpesquisar] img{
+  height: 35px;
+}
+
+.search form button[name=btnpesquisar]:hover{
+  background: #ddd;
+  border: 1px solid #ddd;
+}
+
+/***** Gráficos *****/
+#charts_content1, #charts_content2 {
+    width: 50%;
+    float: left;
+    margin-bottom: 75px;
+}
+
+#chart1, #chart2, #chart3, #chart4, #chart5{
+    width: calc(75% - 150px);
+    margin: 25px 0 0 150px;
+}
+
+.link_pinicial{
+    text-decoration: none;
+    color: #000000;
+}
+
+.link_pinicial:hover{
+	text-decoration: underline;
+	color: #666666;
+}
+
+/***** Legendas dos gráficos *****/
+
+.legend{
+  width: 95%;
+  height: 50px;
+  margin: 20px auto;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.legend table{
+  width: 100%;
+}
+
+.legend table, .legend tr, .legend td{
+  vertical-align: middle;
+}
+
+.legend .label_legend{
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 2px solid #aaa;
+}
+
+.legend .ganhos, .legend .confirmados{
+  background: #32CD32;
+}
+
+.legend .despesas, .legend .cancelados{
+  background: #FF0000;
+}
+
+.legend .balanco{
+  background: #0000FF;
+}
+
+/*Janela Modal*/
+#mask{
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 900;
+  background-color: #000;
+  display: none;
+}
+
+#modal .window{
+  position: absolute;
+  width: 440px;
+  height: 500px;
+  display: none;
+  z-index: 999;
+}
+
+#modal #modalwindow{
+  width: 500px;
+  opacity:1;
+}
+
+#headermodal{
+  width: 99.8%;
+  height: 30px;
+  background-color: #888;
+  box-shadow: 3px 3px 4px #000;
+  border: 1px solid #000;
+}
+
+#headermodal h1{
+  font-size: 25px;
+  float: left;
+  margin: 2px 25% 0px 2px;
+
+}
+
+.close{
+  float: left;
+}
+
+.close img{
+  width: 25px;
+  height: 25px;
+}
+
+#contentmodal table{
+  width: 100%;
+  font-size: 17px;
+  background: #fff;
+  box-shadow: 3px 3px 4px #000;
+  border: 1px solid #000;
+}
+
+#contentmodal table tr, #contentmodal table td{
+  border: 1px solid #ddd;
+  height: 30px;
+  vertical-align: middle;
+  width: 50%;
+}
+
+#contentmodal table tr{
+  text-align: left;
+}
+
+#contentmodal table tr:hover{
+  background: #ccd7d9;
+}
+
+#contentmodal table tr:nth-child(even){
+  background: #eee;
+}
+
+#contentmodal table tr:nth-child(even):hover {
+  background: #ccd7d9;
+}
+.pagination li {
+  display:inline-block;
+  padding:5px;
+}
